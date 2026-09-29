@@ -1,0 +1,144 @@
+.milestonesSection {
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.timelineWrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.6) 0%, rgba(37, 99, 235, 0.4) 100%);
+  transform: translateX(-50%);
+}
+
+.timelineList {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.timelineNode {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.nodeLeft {
+  justify-content: flex-start;
+  padding-right: 50%;
+}
+
+.nodeRight {
+  justify-content: flex-end;
+  padding-left: 50%;
+}
+
+.nodeDot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #090f1b;
+  border: 2px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+}
+
+.dotInner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-gold-light);
+}
+
+.nodeCard {
+  width: 90%;
+  padding: 1.75rem;
+  transition: all var(--transition-normal);
+}
+
+.nodeLeft .nodeCard {
+  margin-right: 2.5rem;
+}
+
+.nodeRight .nodeCard {
+  margin-left: 2.5rem;
+}
+
+.nodeCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.15);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.yearBadge {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--accent-gold-light);
+  font-family: var(--font-mono);
+}
+
+.highlightBadge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent-emerald);
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.nodeTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.nodeDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+@media (max-width: 768px) {
+  .timelineLine {
+    left: 20px;
+  }
+  .nodeLeft, .nodeRight {
+    padding-left: 50px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+  .nodeDot {
+    left: 20px;
+  }
+  .nodeLeft .nodeCard, .nodeRight .nodeCard {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
